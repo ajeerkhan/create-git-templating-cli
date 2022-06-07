@@ -13,12 +13,17 @@ import { exec } from "child_process";
  */
 
 const defaultFolderName = "ak-app-starter";
+let repo = "https://github.com/kolusamkhan/create-simple-app.git";
 const initWorkingDirectory = process.cwd();
 
 let folderName = defaultFolderName;
-if (process.argv.slice(2).length > 0) {
-  folderName = process.argv.slice(2)[0];
-}
+const [folder, gitPath] = process.argv.slice(2);
+
+console.log(`Folder ${folder}, git ${gitPath}`);
+if(folder)
+ folderName = folder;
+if(gitPath)
+  repo = gitPath;
 
 const folderPath = join(initWorkingDirectory, folderName);
 
@@ -27,7 +32,7 @@ if (process.argv.slice(2).length > 1) {
   runVsCode = true;
 }
 
-const repo = "https://github.com/kolusamkhan/create-simple-app.git";
+
 console.log(`downloading files from repo ${repo}`);
 
 const execPromise = promisify(exec);
