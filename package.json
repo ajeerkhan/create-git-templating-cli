@@ -24,7 +24,7 @@
     "tsc": "tsc",
     "tsc-cjs": "tsc --p tsconfig-cjs.json",
     "fixup": "./fixup",
-    "build": "npm-run-all -s test clean tsc tsc-cjs fixup tag ",
+    "build": "npm-run-all -s test clean tsc fixup tag ",
     "prepare": "npm run safety-check && npm run build"
   },
   "repository": {
