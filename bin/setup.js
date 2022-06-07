@@ -64,11 +64,16 @@ async function setup() {
     appendFileSync(".gitignore", "\r\n.env", "utf8");
 
     /** remove extra files and folders from disk. we don't need it anymore */
-    unlinkSync(join(process.cwd(), "fixup"));
-    unlinkSync(join(process.cwd(), "CHANGELOG.md"));
-    unlinkSync(join(process.cwd(), "README.md"));
-    unlinkSync(join(process.cwd(), "bin", "setup.js"));
-    rmdirSync(join(process.cwd(), "bin"));
+    try {
+      unlinkSync(join(process.cwd(), "fixup"));
+      unlinkSync(join(process.cwd(), "CHANGELOG.md"));
+      unlinkSync(join(process.cwd(), "README.md"));
+      unlinkSync(join(process.cwd(), "bin", "setup.js"));
+      rmdirSync(join(process.cwd(), "bin"));
+    } catch (error) {
+      console.log(`Skipping unlink operations set....`)
+    }
+    
 
     await runShellCmd(`git init && git add . && git commit -am "init commit"`);
     console.log(`new git repo initialized successfully!`);
