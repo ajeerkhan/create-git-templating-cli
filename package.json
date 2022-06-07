@@ -1,6 +1,6 @@
 {
   "name": "create-git-templating-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to clone application from git.",
   "bin": "bin/setup.js",
   "type": "module",
