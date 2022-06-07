@@ -4,12 +4,6 @@
   "description": "CLI to clone application from git.",
   "bin": "bin/setup.js",
   "type": "module",
-  "main": "dist-cjs/index.js",
-  "module": "dist-esm/index.js",
-  "exports": {
-    "import": "./dist-esm/index.js",
-    "require": "./dist-cjs/index.js"
-  },
   "scripts": {
     "safety-check": "git pull && git status && npm run lint && npm run lint-fix",
     "clean": "rimraf ./dist-esm ./dist-cjs",
@@ -54,5 +48,6 @@
     "prettier": "^2.6.2",
     "typedoc": "^0.22.15",
     "typescript": "^4.4.3"
-  }
+  },
+  "files": []
 }
