@@ -1,1 +1,5 @@
-export { echo as echoMessage } from "./simple-echo.js";
+/**
+ * Dummy file for entry point
+ */
+
+export const Oops = ()=>"";
