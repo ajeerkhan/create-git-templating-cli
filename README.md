@@ -1,6 +1,14 @@
 # create-git-templating-cli
 CLI to clone application from git.
 
+# Usage
+run below to clone any git repo
+
+npx create-git-templating-cli v2 https://github.com/kolusamkhan/flight-routes-app.git
+
+# publish package
+run 'npm publish'
+
 # Best practices in publishing a npm package are
 1. Safety Checks:
     git pull
